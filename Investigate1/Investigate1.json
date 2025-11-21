@@ -14,17 +14,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/OptinalKatze"
+                "$ref": "#/components/schemas/ColorRequest"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/OptinalKatze"
+                "$ref": "#/components/schemas/ColorRequest"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/OptinalKatze"
+                "$ref": "#/components/schemas/ColorRequest"
               }
             }
           },
@@ -36,17 +36,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/RequiredKatze"
+                  "$ref": "#/components/schemas/ColorResponse"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RequiredKatze"
+                  "$ref": "#/components/schemas/ColorResponse"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RequiredKatze"
+                  "$ref": "#/components/schemas/ColorResponse"
                 }
               }
             }
@@ -57,36 +57,35 @@
   },
   "components": {
     "schemas": {
-      "Katzenum": {
+      "Color": {
         "enum": [
-          "green",
-          "yellow",
-          null
+          "Green",
+          "Yellow"
         ]
       },
-      "OptinalKatze": {
+      "ColorRequest": {
         "type": "object",
         "properties": {
-          "katze": {
+          "here": {
             "oneOf": [
               {
                 "type": "null"
               },
               {
-                "$ref": "#/components/schemas/Katzenum"
+                "$ref": "#/components/schemas/Color"
               }
             ]
           }
         }
       },
-      "RequiredKatze": {
+      "ColorResponse": {
         "required": [
-          "katzenum"
+          "there"
         ],
         "type": "object",
         "properties": {
-          "katzenum": {
-            "$ref": "#/components/schemas/Katzenum"
+          "there": {
+            "$ref": "#/components/schemas/Color"
           }
         }
       }

@@ -1,19 +1,20 @@
 namespace Investigate1.Model;
 
-public enum Katzenum
+using System.Text.Json.Serialization;
+
+[JsonConverter(typeof(JsonStringEnumConverter))]
+public enum Color
 {
-    green,
-    yellow
+    Green,
+    Yellow
 }
 
-public class OptinalKatze
+public class ColorRequest
 {
-    public  Katzenum? katze { get; set; }
-    
+    public Color? Here { get; set; }
 }
 
-public class RequiredKatze
+public class ColorResponse
 {
-    public required Katzenum Katzenum { get; init; }
-
+    public required Color There { get; init; }
 }

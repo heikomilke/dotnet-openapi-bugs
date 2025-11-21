@@ -8,11 +8,11 @@ namespace Investigate1.Model;
 public class KatzeController : ControllerBase
 {
     [HttpPost("get-default-katze")]
-    public ActionResult<RequiredKatze> Health(OptinalKatze optinalKatze)
+    public ActionResult<ColorResponse> Health(ColorRequest colorRequest)
     {
-        return new RequiredKatze()
+        return new ColorResponse()
         {
-            Katzenum = optinalKatze.katze ?? Katzenum.green
+            There = colorRequest.Here ?? Color.Green
         };
     }
 }

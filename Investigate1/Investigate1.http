@@ -1,6 +1,0 @@
-@Investigate1_HostAddress = http://localhost:5125
-
-GET {{Investigate1_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
